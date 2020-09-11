@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>shared-ui</artifactId>
+	<packaging>jar</packaging>
+	<name>SharedUi</name>
+	<description>Shared Library for all Web UI Test</description>
+	<url>http://www.seerema.com</url>
+
+	<!-- <scm>
+		<developerConnection>scm:svn:svn://localhost/SeeremaUi/trunk/SeeremaFoo</developerConnection>
+		<connection></connection>
+		<url>https://github.com/seerema/SeeremaUi.git</url>
+	</scm> -->
+	
+	<parent>
+		<groupId>com.seerema.web_ui.test</groupId>
+		<artifactId>parent</artifactId>
+		<relativePath>../</relativePath>
+		<version>1.0.0</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-jar-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>default-jar</id>
+						<phase>package</phase>
+						<configuration>
+							<skipIfEmpty>true</skipIfEmpty>
+						</configuration>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+
+					<execution>
+						<id>default-test-jar</id>
+						<phase>package</phase>
+						<goals>
+							<goal>test-jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

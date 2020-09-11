@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>bootstrap-ui</artifactId>
+	<packaging>jar</packaging>
+	<name>BootstrapUi</name>
+	<description>Test for Seerema Bootstrap UI</description>
+	<url>http://www.seerema.com</url>
+
+	<scm>
+		<connection>cm:git:git://github.com/seerema/SeeremaUi/Bootstrap.git</connection>
+		<developerConnection>scm:svn:svn://localhost/SeeremaUi/Bootstrap</developerConnection>
+		<url>https://github.com/seerema/SeeremaUiTest</url>
+	</scm>
+
+	<parent>
+		<groupId>com.seerema.web_ui.test</groupId>
+		<artifactId>parent</artifactId>
+		<relativePath>../</relativePath>
+		<version>1.0.0</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.seerema.rest</groupId>
+			<artifactId>shared-ui-rest</artifactId>
+			<version>${seerema-rest.version}</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- Test Dependencies -->
+		<dependency>
+			<groupId>com.seerema.rest</groupId>
+			<artifactId>shared-ui-rest</artifactId>
+			<version>${seerema-rest.version}</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.seerema.rest</groupId>
+			<artifactId>shared-ui-config</artifactId>
+			<version>${seerema-rest.version}</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.seerema.rest</groupId>
+			<artifactId>shared-config</artifactId>
+			<version>${seerema-rest.version}</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.seerema.web_ui.test</groupId>
+			<artifactId>shared-ui</artifactId>
+			<version>${project.version}</version>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>release</id>
+
+			<build>
+				<plugins>
+
+					<!-- Test preparations. Order is important -->
+					<!-- 1. Export UI -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-scm-plugin</artifactId>
+
+						<executions>
+							<execution>
+								<id>export-webapp</id>
+								<phase>generate-test-resources</phase>
+								<goals>
+									<goal>export</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+					<!-- 2. Add extra files -->
+					<plugin>
+						<artifactId>maven-resources-plugin</artifactId>
+
+						<executions>
+							<execution>
+								<id>copy-resources</id>
+								<phase>generate-test-resources</phase>
+								<goals>
+									<goal>copy-resources</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		
+		<profile>
+			<id>dev</id>
+
+			<build>
+				<plugins>
+
+					<!-- Test preparations. Order is important -->
+					<!-- 1. Export UI -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-scm-plugin</artifactId>
+						
+						<executions>
+							<execution>
+								<id>export-webapp</id>
+								<phase>generate-test-resources</phase>
+								<goals>
+									<goal>export</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+					<!-- 2. Add extra files -->
+					<plugin>
+						<artifactId>maven-resources-plugin</artifactId>
+
+						<executions>
+							<execution>
+								<id>copy-resources</id>
+								<phase>generate-test-resources</phase>
+								<goals>
+									<goal>copy-resources</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>
