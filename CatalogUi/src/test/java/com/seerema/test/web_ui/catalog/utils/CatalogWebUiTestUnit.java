@@ -465,17 +465,17 @@ public abstract class CatalogWebUiTestUnit extends AbstractSharedWebUiTest {
     SharedWebUiTestConstants.LL_SET.get("de").put("LL_SELECT_CITY",
       "Stadt wählen");
     
-    // LL_SELECT_FIELD_CAT
-    SharedWebUiTestConstants.LL_SET.get("en").put("LL_SELECT_FIELD_CAT",
-      "Select Field Category");
-    SharedWebUiTestConstants.LL_SET.get("fr").put("LL_SELECT_FIELD_CAT",
-      "Sélectionnez la catégorie de champ");
-    SharedWebUiTestConstants.LL_SET.get("ru").put("LL_SELECT_FIELD_CAT",
-      "Выбрать Категорию Поля");
-    SharedWebUiTestConstants.LL_SET.get("es").put("LL_SELECT_FIELD_CAT",
-      "Seleccionar categoría de campo");
-    SharedWebUiTestConstants.LL_SET.get("de").put("LL_SELECT_FIELD_CAT",
-      "Wählen Sie Feldkategorie");
+    // LL_SELECT_BUSINESS_TYPE
+    SharedWebUiTestConstants.LL_SET.get("en").put("LL_SELECT_BUSINESS_TYPE",
+      "Select Business Type");
+    SharedWebUiTestConstants.LL_SET.get("fr").put("LL_SELECT_BUSINESS_TYPE",
+      "Sélectionnez le type d'entreprise");
+    SharedWebUiTestConstants.LL_SET.get("ru").put("LL_SELECT_BUSINESS_TYPE",
+      "Выберите Тип Бизнеса");
+    SharedWebUiTestConstants.LL_SET.get("es").put("LL_SELECT_BUSINESS_TYPE",
+      "Seleccionar tipo de negocio");
+    SharedWebUiTestConstants.LL_SET.get("de").put("LL_SELECT_BUSINESS_TYPE",
+      "Wählen Sie Geschäftstyp");
     
     // LL_COMPANY
     SharedWebUiTestConstants.LL_SET.get("en").put("LL_COMPANY",

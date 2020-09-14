@@ -51,7 +51,8 @@ public class Companies extends AbstractEntity {
   private static String[][] SLIDE_DATA =
       new String[][] { new String[] { "[LL_COMPANY]" } };
 
-  private static String[] SLIDE_TITLES = new String[] { "LL_SELECT_FIELD_CAT" };
+  private static String[] SLIDE_TITLES =
+      new String[] { "LL_SELECT_BUSINESS_TYPE" };
 
   private static String[] SLIDE_NAMES = new String[] { "field_cats" };
 
