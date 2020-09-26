@@ -45,14 +45,14 @@ public class Companies extends AbstractEntity {
       new String[] { "Qq Inc.", "[LL_COMPANY]", "Here we are", "", "", "Test",
           "", "http://qq.com/", "", "" };
 
-  private static String[] FORM_LABELS = new String[] { "LL_NAME", "LL_TYPE",
+  private static String[] FORM_LABELS = new String[] { "LL_NAME", "LL_CATEGORY",
       "LL_ADDRESS", "LL_EMAIL", "LL_FAX", "LL_NOTES", "LL_PHONE", "LL_SITE" };
 
   private static String[][] SLIDE_DATA =
       new String[][] { new String[] { "[LL_COMPANY]" } };
 
   private static String[] SLIDE_TITLES =
-      new String[] { "LL_SELECT_BUSINESS_TYPE" };
+      new String[] { "LL_SELECT_BUSINESS_CATEGORY" };
 
   private static String[] SLIDE_NAMES = new String[] { "field_cats" };
 

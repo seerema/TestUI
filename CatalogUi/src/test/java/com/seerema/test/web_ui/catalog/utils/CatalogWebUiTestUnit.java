@@ -465,17 +465,17 @@ public abstract class CatalogWebUiTestUnit extends AbstractSharedWebUiTest {
     SharedWebUiTestConstants.LL_SET.get("de").put("LL_SELECT_CITY",
       "Stadt wählen");
     
-    // LL_SELECT_BUSINESS_TYPE
-    SharedWebUiTestConstants.LL_SET.get("en").put("LL_SELECT_BUSINESS_TYPE",
-      "Select Business Type");
-    SharedWebUiTestConstants.LL_SET.get("fr").put("LL_SELECT_BUSINESS_TYPE",
-      "Sélectionnez le type d'entreprise");
-    SharedWebUiTestConstants.LL_SET.get("ru").put("LL_SELECT_BUSINESS_TYPE",
-      "Выберите Тип Бизнеса");
-    SharedWebUiTestConstants.LL_SET.get("es").put("LL_SELECT_BUSINESS_TYPE",
-      "Seleccionar tipo de negocio");
-    SharedWebUiTestConstants.LL_SET.get("de").put("LL_SELECT_BUSINESS_TYPE",
-      "Wählen Sie Geschäftstyp");
+    // LL_SELECT_BUSINESS_CATEGORY
+    SharedWebUiTestConstants.LL_SET.get("en").put("LL_SELECT_BUSINESS_CATEGORY",
+      "Select Business Category");
+    SharedWebUiTestConstants.LL_SET.get("fr").put("LL_SELECT_BUSINESS_CATEGORY",
+      "Sélectionnez la catégorie d'entreprisee");
+    SharedWebUiTestConstants.LL_SET.get("ru").put("LL_SELECT_BUSINESS_CATEGORY",
+      "Выберите Бизнес Инфо Категорию");
+    SharedWebUiTestConstants.LL_SET.get("es").put("LL_SELECT_BUSINESS_CATEGORY",
+      "Seleccionar categoría empresarial");
+    SharedWebUiTestConstants.LL_SET.get("de").put("LL_SELECT_BUSINESS_CATEGORY",
+      "Wählen Sie Geschäftskategorie");
     
     // LL_COMPANY
     SharedWebUiTestConstants.LL_SET.get("en").put("LL_COMPANY",
@@ -500,6 +500,18 @@ public abstract class CatalogWebUiTestUnit extends AbstractSharedWebUiTest {
       "Tipo");
     SharedWebUiTestConstants.LL_SET.get("de").put("LL_TYPE",
       "Art");
+    
+    // LL_CATEGORY
+    SharedWebUiTestConstants.LL_SET.get("en").put("LL_CATEGORY",
+      "Category");
+    SharedWebUiTestConstants.LL_SET.get("fr").put("LL_CATEGORY",
+      "Catégorie");
+    SharedWebUiTestConstants.LL_SET.get("ru").put("LL_CATEGORY",
+      "Категория");
+    SharedWebUiTestConstants.LL_SET.get("es").put("LL_CATEGORY",
+      "Categoría");
+    SharedWebUiTestConstants.LL_SET.get("de").put("LL_CATEGORY",
+      "Kategorie");
     
     /*
     // 
