@@ -7,7 +7,7 @@
 	<groupId>com.seerema.web_ui.test</groupId>
 	<artifactId>parent</artifactId>
 	<packaging>pom</packaging>
-	<version>1.0.0</version>
+	<version>1.2.0</version>
 	<name>WebUiParent</name>
 	<url>http://www.seerema.com</url>
 
@@ -35,7 +35,7 @@
 		<selenium.version>3.14.0</selenium.version>
 		<!-- <scm-plugin.version>1.9.5</scm-plugin.version> -->
 		<scm-plugin.version>1.11.2</scm-plugin.version>
-		<seerema-rest.version>2.0.0</seerema-rest.version>
+		<seerema-rest.version>2.2.0</seerema-rest.version>
 		<seerema-shared.path>${project.build.directory}/sbs_shared</seerema-shared.path>
 		<web-app.path>webapp</web-app.path>
 		<web-app-test.path>src/test/${web-app.path}</web-app-test.path>
@@ -284,5 +284,7 @@
 		<module>SharedUi</module>
 		<module>BootstrapUi</module>
 		<module>CatalogUi</module>
+		<module>SharedModUi</module>
+		<module>TaskUi</module>
 	</modules>
 </project>

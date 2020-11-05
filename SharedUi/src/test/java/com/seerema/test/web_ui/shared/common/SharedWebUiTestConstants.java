@@ -36,14 +36,24 @@ public class SharedWebUiTestConstants {
   // Name of Ws Config property in multi-lang test class
   public static final String CFG_FIELD_NAME = "WS_CFG";
 
-  public static final String GUI_SRV_URL_BASE = "/web_test/fr/";
+  public static final String GUI_CTX_URL = "/web_test";
+
+  public static final String GUI_SRV_URL_BASE = GUI_CTX_URL + "/fr/";
 
   // Default test GUI URL
   public static final String GUI_SRV_URL =
       GUI_SRV_URL_BASE + "index.html?debug=on";
 
-  // Test user name
-  public static final String TEST_USER = "any";
+  // User map
+  public static final Map<String, String> TEST_USERS = new HashMap<>();
+
+  static {
+    TEST_USERS.put("user1", "ROLE_SBS_USER");
+    TEST_USERS.put("user2", "ROLE_SBS_USER");
+    TEST_USERS.put("user3", "ROLE_SBS_USER");
+    TEST_USERS.put("manager", "ROLE_SBS_MANAGER");
+    TEST_USERS.put("admin", "ROLE_SBS_ADMIN");
+  }
 
   // Language used for testing specific, usually new language
   public static String LANG;
@@ -60,9 +70,6 @@ public class SharedWebUiTestConstants {
   // Array of known locales
   public static Map<String, Locale> LOCALES =
       new LinkedHashMap<String, Locale>();
-
-  // Base URL
-  public static final String BASE_URL = "/api/v1";
 
   public static final Logger LOG = LoggerFactory.getLogger("Test");
 

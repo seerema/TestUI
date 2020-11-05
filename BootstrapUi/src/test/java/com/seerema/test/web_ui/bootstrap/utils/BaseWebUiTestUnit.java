@@ -114,7 +114,7 @@ public abstract class BaseWebUiTestUnit extends AbstractSharedWebUiTest {
   }
 
   @Override
-  public void checkAfterSimpleLogin(String lang) throws InterruptedException {
+  public void checkAfterSimpleLogin(String lang) throws Exception {
     checkDemoPage(lang);
   }
 

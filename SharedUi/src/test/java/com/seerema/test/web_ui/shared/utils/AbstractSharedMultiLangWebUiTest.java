@@ -21,6 +21,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.launcher.Launcher;
 import org.junit.platform.launcher.LauncherDiscoveryRequest;
+import org.junit.platform.launcher.TestIdentifier;
 import org.junit.platform.launcher.core.LauncherDiscoveryRequestBuilder;
 import org.junit.platform.launcher.core.LauncherFactory;
 import org.junit.platform.launcher.listeners.SummaryGeneratingListener;
@@ -73,10 +74,13 @@ public abstract class AbstractSharedMultiLangWebUiTest {
         if (fcnt != 0) {
 
           List<Failure> list = res.getFailures();
-          for (int i = 0; i < list.size(); i++)
-            SharedWebUiTestConstants.LOG.error("\t ERROR #" + i + " - " +
-                list.get(i).getException().getClass().getName() + ": " +
-                list.get(i).getException() + ";");
+          for (int i = 0; i < list.size(); i++) {
+            Failure f = list.get(i);
+            TestIdentifier ti = f.getTestIdentifier();
+            System.err.println("\t ERROR #" + i + " - " +
+                f.getException().getClass().getName() + ": " +
+                f.getException() + "; " + ti.getSource());
+          }
 
           fail("Test fail for lang: " + lang + ". " + fcnt +
               " errors detected.");

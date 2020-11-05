@@ -25,7 +25,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Cookie;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
@@ -186,11 +185,21 @@ public abstract class WebUiTestUtils {
   }
 
   protected WebElement checkElementVisibleEx(String selector, boolean visible,
-      String comment) throws NoSuchElementException {
-    WebElement el = _root.findElement(By.cssSelector(selector));
-    testElementVisible(el, selector, visible, comment);
+      String comment) throws Exception {
+    try {
+      WebElement el = _root.findElement(By.cssSelector(selector));
+      if (!visible)
+        throw new Exception(comment);
 
-    return el;
+      testElementVisible(el, selector, visible, comment);
+
+      return el;
+    } catch (NoSuchElementException e) {
+      if (visible)
+        throw new Exception(comment);
+    }
+
+    return null;
   }
 
   protected WebElement checkElementVisible(WebElement parent, String id,
@@ -246,20 +255,20 @@ public abstract class WebUiTestUtils {
     return true;
   }
 
-  protected WebElement checkButtonById(String lang, String id,
+  protected WebElement checkButtonClassName(String lang, String cname,
       boolean enabled) {
-    return checkButtonById(lang, id, id, enabled);
+    return checkButtonByClassName(lang, cname, cname, enabled);
   }
 
-  protected WebElement checkButtonById(String lang, String id, String text,
-      boolean enabled) {
-    WebElement button = checkElementVisible(id, true);
+  protected WebElement checkButtonByClassName(String lang, String cname,
+      String text, boolean enabled) {
+    WebElement button = checkElementVisible(cname, true);
 
     checkButton(button, lang, text, enabled);
     return button;
   }
 
-  protected WebElement checkButtonById(WebElement parent, String lang,
+  protected WebElement checkButtonByClassName(WebElement parent, String lang,
       String id, String text, boolean visible, boolean enabled) {
     WebElement button = parent.findElement(By.className(id));
     testElementVisible(button, id, visible);
@@ -271,10 +280,15 @@ public abstract class WebUiTestUtils {
   protected WebElement checkElementVisibleEnabled(WebElement parent,
       String cname, boolean visible, boolean enabled) {
     WebElement el = parent.findElement(By.className(cname));
-    assertEquals(enabled, el.isEnabled());
-    assertEquals(visible, el.isDisplayed());
+    checkElementVisibleEnabled(el, visible, enabled);
 
     return el;
+  }
+
+  protected void checkElementVisibleEnabled(WebElement el, boolean visible,
+      boolean enabled) {
+    assertEquals(enabled, el.isEnabled());
+    assertEquals(visible, el.isDisplayed());
   }
 
   protected WebElement checkButton(WebElement button, String lang, String text,
@@ -356,14 +370,6 @@ public abstract class WebUiTestUtils {
     driver.get(url);
     sleep(2);
 
-    // Inject login cookie
-    Cookie ck = new Cookie("ROLES", "ROLE_SBS_ADMIN");
-    driver.manage().addCookie(ck);
-
-    // Repeat url to apply cookie
-    driver.get(url);
-    sleep(2);
-
     // Initiate root element
     setTopWebEl();
   }
@@ -404,14 +410,10 @@ public abstract class WebUiTestUtils {
    * Default delay after UI animated update
    */
   protected void sleep() {
-    sleep(1);
+    SharedTestUtils.sleep();
   }
 
   protected void sleep(int tsec) {
-    try {
-      Thread.sleep(tsec * 1000);
-    } catch (InterruptedException e) {
-      // Do nothing
-    }
+    SharedTestUtils.sleep(tsec);
   }
 }

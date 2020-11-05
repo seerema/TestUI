@@ -25,8 +25,8 @@ public class Companies extends AbstractEntity {
   // @formatter:off
 
   private static String[][] INIT_DATA = new String[][] { 
-    new String[] { "Example", "[LL_COMPANY]", "Here we are", "info@example.com", 
-        "", "", "1-888-1234567", "http://www.example.com/", "", "" }
+    new String[] { "Example", "[LL_COMPANY]", "Here we are", "", "info@example.com", 
+        "", "", "", "1-888-1234567", "http://www.example.com/" }
   };
 
   // @formatter:on
@@ -42,11 +42,12 @@ public class Companies extends AbstractEntity {
           "", "Test", "", "http://qq.com/" };
 
   private static String[] UPDATE_DATA_ROW =
-      new String[] { "Qq Inc.", "[LL_COMPANY]", "Here we are", "", "", "Test",
-          "", "http://qq.com/", "", "" };
+      new String[] { "Qq Inc.", "[LL_COMPANY]", "Here we are", "", "", "", "",
+          "Test", "", "http://qq.com/" };
 
-  private static String[] FORM_LABELS = new String[] { "LL_NAME", "LL_CATEGORY",
-      "LL_ADDRESS", "LL_EMAIL", "LL_FAX", "LL_NOTES", "LL_PHONE", "LL_SITE" };
+  private static String[] FORM_LABELS =
+      new String[] { "LL_NAME", "LL_CATEGORY", "LL_ADDRESS", "LL_EMAIL",
+          "LL_FAX", "LL_NOTES", "LL_PHONE", "LL_WEB_SITE" };
 
   private static String[][] SLIDE_DATA =
       new String[][] { new String[] { "[LL_COMPANY]" } };

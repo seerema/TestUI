@@ -23,11 +23,13 @@ import com.seerema.test.web_ui.shared.common.SharedWebUiTestConstants;
 
 public abstract class AbstractSharedWebUiTest extends GenericUiTestWeb {
 
-  public abstract void checkAfterSimpleLogin(String lang)
-      throws InterruptedException;
+  public abstract void checkAfterSimpleLogin(String lang) throws Exception;
 
   @Test
   public void testBaseGui() throws Exception {
+    // Inject user into the session b4 initialize driver
+    injectUser("user1");
+
     init(SharedWebUiTestConstants.LANG);
 
     checkAfterSimpleLogin(SharedWebUiTestConstants.LANG);
@@ -35,6 +37,9 @@ public abstract class AbstractSharedWebUiTest extends GenericUiTestWeb {
 
   @Test
   public void testCopyright() throws InterruptedException {
+    // Inject user into the session b4 initialize driver
+    injectUser("user1");
+
     init(SharedWebUiTestConstants.LANG);
 
     // Copyright is language independent

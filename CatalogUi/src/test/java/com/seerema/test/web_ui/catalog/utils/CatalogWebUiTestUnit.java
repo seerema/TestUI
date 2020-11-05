@@ -357,78 +357,6 @@ public abstract class CatalogWebUiTestUnit extends AbstractSharedWebUiTest {
     SharedWebUiTestConstants.LL_SET.get("de").put("LL_POSTAL_CODE",
       "Postleitzahl");
     
-    // LL_SITE
-    SharedWebUiTestConstants.LL_SET.get("en").put("LL_SITE",
-      "Web Site");
-    SharedWebUiTestConstants.LL_SET.get("fr").put("LL_SITE",
-      "Site Internet");
-    SharedWebUiTestConstants.LL_SET.get("ru").put("LL_SITE",
-      "Веб Сайт");
-    SharedWebUiTestConstants.LL_SET.get("es").put("LL_SITE",
-      "Sitio web");
-    SharedWebUiTestConstants.LL_SET.get("de").put("LL_SITE",
-      "Webseite");
-    
-    // LL_PHONE
-    SharedWebUiTestConstants.LL_SET.get("en").put("LL_PHONE",
-      "Phone");
-    SharedWebUiTestConstants.LL_SET.get("fr").put("LL_PHONE",
-      "Téléphone");
-    SharedWebUiTestConstants.LL_SET.get("ru").put("LL_PHONE",
-      "Телефон");
-    SharedWebUiTestConstants.LL_SET.get("es").put("LL_PHONE",
-      "Teléfono");
-    SharedWebUiTestConstants.LL_SET.get("de").put("LL_PHONE",
-      "Telefon");
-    
-    // LL_EMAIL
-    SharedWebUiTestConstants.LL_SET.get("en").put("LL_EMAIL",
-      "Email");
-    SharedWebUiTestConstants.LL_SET.get("fr").put("LL_EMAIL",
-      "Email");
-    SharedWebUiTestConstants.LL_SET.get("ru").put("LL_EMAIL",
-      "Эл. Почта");
-    SharedWebUiTestConstants.LL_SET.get("es").put("LL_EMAIL",
-      "Email");
-    SharedWebUiTestConstants.LL_SET.get("de").put("LL_EMAIL",
-      "Email");
-    
-    // LL_ADDRESS
-    SharedWebUiTestConstants.LL_SET.get("en").put("LL_ADDRESS",
-      "Address");
-    SharedWebUiTestConstants.LL_SET.get("fr").put("LL_ADDRESS",
-      "Adresse");
-    SharedWebUiTestConstants.LL_SET.get("ru").put("LL_ADDRESS",
-      "Адрес");
-    SharedWebUiTestConstants.LL_SET.get("es").put("LL_ADDRESS",
-      "Habla a");
-    SharedWebUiTestConstants.LL_SET.get("de").put("LL_ADDRESS",
-      "Adresse");
-    
-    // LL_FAX
-    SharedWebUiTestConstants.LL_SET.get("en").put("LL_FAX",
-      "Fax");
-    SharedWebUiTestConstants.LL_SET.get("fr").put("LL_FAX",
-      "Fax");
-    SharedWebUiTestConstants.LL_SET.get("ru").put("LL_FAX",
-      "Факс");
-    SharedWebUiTestConstants.LL_SET.get("es").put("LL_FAX",
-      "Fax");
-    SharedWebUiTestConstants.LL_SET.get("de").put("LL_FAX",
-      "Fax");
-    
-    // LL_NOTES
-    SharedWebUiTestConstants.LL_SET.get("en").put("LL_NOTES",
-      "Notes");
-    SharedWebUiTestConstants.LL_SET.get("fr").put("LL_NOTES",
-      "Remarques");
-    SharedWebUiTestConstants.LL_SET.get("ru").put("LL_NOTES",
-      "Заметки");
-    SharedWebUiTestConstants.LL_SET.get("es").put("LL_NOTES",
-      "Notas");
-    SharedWebUiTestConstants.LL_SET.get("de").put("LL_NOTES",
-      "Anmerkungen");
-    
     // LL_SELECT_COUNTRY
     SharedWebUiTestConstants.LL_SET.get("en").put("LL_SELECT_COUNTRY",
         "Select Country");
@@ -477,42 +405,6 @@ public abstract class CatalogWebUiTestUnit extends AbstractSharedWebUiTest {
     SharedWebUiTestConstants.LL_SET.get("de").put("LL_SELECT_BUSINESS_CATEGORY",
       "Wählen Sie Geschäftskategorie");
     
-    // LL_COMPANY
-    SharedWebUiTestConstants.LL_SET.get("en").put("LL_COMPANY",
-      "Company");
-    SharedWebUiTestConstants.LL_SET.get("fr").put("LL_COMPANY",
-      "Compagnie");
-    SharedWebUiTestConstants.LL_SET.get("ru").put("LL_COMPANY",
-      "Компания");
-    SharedWebUiTestConstants.LL_SET.get("es").put("LL_COMPANY",
-      "Empresa");
-    SharedWebUiTestConstants.LL_SET.get("de").put("LL_COMPANY",
-      "Unternehmen");
-    
-    // LL_TYPE
-    SharedWebUiTestConstants.LL_SET.get("en").put("LL_TYPE",
-      "Type");
-    SharedWebUiTestConstants.LL_SET.get("fr").put("LL_TYPE",
-      "Type");
-    SharedWebUiTestConstants.LL_SET.get("ru").put("LL_TYPE",
-      "Тип");
-    SharedWebUiTestConstants.LL_SET.get("es").put("LL_TYPE",
-      "Tipo");
-    SharedWebUiTestConstants.LL_SET.get("de").put("LL_TYPE",
-      "Art");
-    
-    // LL_CATEGORY
-    SharedWebUiTestConstants.LL_SET.get("en").put("LL_CATEGORY",
-      "Category");
-    SharedWebUiTestConstants.LL_SET.get("fr").put("LL_CATEGORY",
-      "Catégorie");
-    SharedWebUiTestConstants.LL_SET.get("ru").put("LL_CATEGORY",
-      "Категория");
-    SharedWebUiTestConstants.LL_SET.get("es").put("LL_CATEGORY",
-      "Categoría");
-    SharedWebUiTestConstants.LL_SET.get("de").put("LL_CATEGORY",
-      "Kategorie");
-    
     /*
     // 
     SharedWebUiTestConstants.LL_SET.get("en").put("",
@@ -531,7 +423,8 @@ public abstract class CatalogWebUiTestUnit extends AbstractSharedWebUiTest {
   }
 
   @Test
-  void testEntities() {
+  void testEntities() throws Exception {
+    injectUser("manager");
     init(SharedWebUiTestConstants.LANG);
 
     WebElement nav = getSideNavigationEl();
@@ -624,7 +517,9 @@ public abstract class CatalogWebUiTestUnit extends AbstractSharedWebUiTest {
       String text = closeAlertAndGetItsText(true);
       sleep(3);
 
-      // TODO Verify confirmation text
+      // Verify confirmation text
+      assertEquals(text,
+          getLabelText(SharedWebUiTestConstants.LANG, "LL_PLEASE_CONFIRM"));
 
       // Verify entity data same as started
       handler.checkInitData(getEnityListRows(ctx, name));
@@ -768,13 +663,13 @@ public abstract class CatalogWebUiTestUnit extends AbstractSharedWebUiTest {
     return tdata.findElements(By.tagName("tr"));
   }
 
-  private WebElement getSideNavigationEl() {
+  private WebElement getSideNavigationEl() throws Exception {
     WebElement nav = checkElementVisibleEx("nav.sidebar", true,
         "Side navigation is not visible.");
     return nav;
   }
 
-  private void testSideNavigation() {
+  private void testSideNavigation() throws Exception {
     WebElement nav = getSideNavigationEl();
 
     // Check catalog title
@@ -816,7 +711,7 @@ public abstract class CatalogWebUiTestUnit extends AbstractSharedWebUiTest {
   }
 
   @Override
-  public void checkAfterSimpleLogin(String lang) throws InterruptedException {
+  public void checkAfterSimpleLogin(String lang) throws Exception {
     testSideNavigation();
   }
 

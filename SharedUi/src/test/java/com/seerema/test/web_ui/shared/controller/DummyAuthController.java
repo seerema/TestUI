@@ -12,20 +12,32 @@
 
 package com.seerema.test.web_ui.shared.controller;
 
-import org.springframework.http.MediaType;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.seerema.test.web_ui.shared.common.SharedWebUiTestConstants;
 
 @RestController
-@RequestMapping(name = SharedWebUiTestConstants.BASE_URL)
 public class DummyAuthController {
 
-  @RequestMapping(value = "/auth", method = RequestMethod.GET,
-      produces = MediaType.TEXT_PLAIN_VALUE)
-  public String dummyAuth() {
-    return "";
+  @RequestMapping(value = "/login")
+  public void dummyAuth(HttpServletRequest req, HttpServletResponse resp,
+      @RequestParam("username") String username) {
+    HttpSession session = req.getSession();
+    session.setAttribute("userName", username);
+
+    String roles = SharedWebUiTestConstants.TEST_USERS.get(username);
+    if (roles != null) {
+      Cookie cookie = new Cookie("ROLES", roles);
+      cookie.setMaxAge(Integer.MAX_VALUE);
+      // Inject role into response
+      resp.addCookie(cookie);
+    }
   }
 }

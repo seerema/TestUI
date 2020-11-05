@@ -12,7 +12,7 @@ insert into city(name, region_id) values('London', 1);
 insert into field_category(name, module_id, is_system) values('LL_COMPANY', 0, 'Y');
 insert into field_category(name, module_id, is_system) values('LL_PERSON', 0, 'Y');
 
-insert into field(name, field_category_id, is_system) values('LL_SITE', 1, 'Y');
+insert into field(name, field_category_id, is_system) values('LL_WEB_SITE', 1, 'Y');
 insert into field(name, field_category_id, is_system) values('LL_PHONE', 1, 'Y');
 insert into field(name, field_category_id, is_system) values('LL_EMAIL', 1, 'Y');
 insert into field(name, field_category_id, is_system) values('LL_ADDRESS', 1, 'Y');
