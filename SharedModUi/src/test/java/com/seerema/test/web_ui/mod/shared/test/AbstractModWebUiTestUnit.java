@@ -389,7 +389,6 @@ public abstract class AbstractModWebUiTestUnit extends AbstractSharedWebUiTest {
 
       if (handler.hasAddButton()) {
         try {
-
           WebElement add = getAddEntityWidget(ctx, name, handler, false);
 
           // Close New Entity form
@@ -399,7 +398,6 @@ public abstract class AbstractModWebUiTestUnit extends AbstractSharedWebUiTest {
         } catch (Exception e) {
           fail(e.getMessage());
         }
-
       }
 
       checkUser(cs, handler, name);

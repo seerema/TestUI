@@ -35,7 +35,7 @@ public class MyPotentialClientsEx extends AbstractModCrm {
 
   private static String[] NEW_DATA_ROW =
       new String[] { "Demo Client", "[LL_COMPANY]", "[LL_LEAD]", "[LL_NEVER]",
-          "", "", "client@company.com", "111-222-3333", "", "" };
+          "[LL_NONE_F]", "", "", "client@company.com", "111-222-3333", "", "" };
 
   private static String[] EXISTING_DATA = new String[] { "Demo Client",
       "[LL_LEAD]", null, "client@company.com", "111-222-3333", "" };
@@ -43,9 +43,9 @@ public class MyPotentialClientsEx extends AbstractModCrm {
   private static String[] UPDATE_DATA = new String[] { "Temp Company",
       "[LL_CUSTOMER]", null, "client@company.com", "111-222-6677", "" };
 
-  private static String[] UPDATE_DATA_ROW =
-      new String[] { "Temp Company", "[LL_COMPANY]", "[LL_CUSTOMER]",
-          "[LL_NEVER]", "", "", "client@company.com", "111-222-6677", "", "" };
+  private static String[] UPDATE_DATA_ROW = new String[] { "Temp Company",
+      "[LL_COMPANY]", "[LL_CUSTOMER]", "[LL_NEVER]", "[LL_NONE_F]", "", "",
+      "client@company.com", "111-222-6677", "", "" };
 
   private static String[] SLIDE_NAMES = new String[] { "field_cats" };
 
@@ -58,9 +58,9 @@ public class MyPotentialClientsEx extends AbstractModCrm {
   private static String[] ADD_FORM_LABELS = new String[] { "LL_NAME", "LL_TYPE",
       "LL_ADDRESS", "LL_EMAIL", "LL_PHONE", "LL_WEB_SITE" };
 
-  protected static String[] UPD_FORM_LABELS =
-      new String[] { "LL_NAME", "LL_TYPE", "LL_STATUS", "LL_LAST_CONTACTED",
-          "LL_ADDRESS", "LL_EMAIL", "LL_PHONE", "LL_WEB_SITE" };
+  protected static String[] UPD_FORM_LABELS = new String[] { "LL_NAME",
+      "LL_TYPE", "LL_STATUS", "LL_LAST_CONTACTED", "LL_CUST_TASKS",
+      "LL_ADDRESS", "LL_EMAIL", "LL_PHONE", "LL_WEB_SITE" };
 
   private static String UPD_STATUS_ENTITY_NAME = AllMyCustomers.NAME;
 

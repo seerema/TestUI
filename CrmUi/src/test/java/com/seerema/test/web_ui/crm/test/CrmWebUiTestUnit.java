@@ -344,6 +344,19 @@ public abstract class CrmWebUiTestUnit extends AbstractModWebUiTestUnit {
       "Actualizar el campo CRM existente");
     SharedWebUiTestConstants.LL_SET.get("de").put("LL_UPDATE_EXISTING_CRM_FIELDS_FIELD",
       "Vorhandenes CRM-Feld aktualisieren");
+
+
+    // LL_CUST_TASKS
+    SharedWebUiTestConstants.LL_SET.get("en").put("LL_CUST_TASKS",
+      "Customer Tasks");
+    SharedWebUiTestConstants.LL_SET.get("fr").put("LL_CUST_TASKS",
+      "Tâches client");
+    SharedWebUiTestConstants.LL_SET.get("ru").put("LL_CUST_TASKS",
+      "Клиентские задачи");
+    SharedWebUiTestConstants.LL_SET.get("es").put("LL_CUST_TASKS",
+      "Tareas del cliente");
+    SharedWebUiTestConstants.LL_SET.get("de").put("LL_CUST_TASKS",
+      "Kundenaufgaben");
     
     /*
     // 

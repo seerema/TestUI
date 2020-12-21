@@ -33,13 +33,13 @@ public class AllMyCustomers extends AbstractModCrm {
 
   private static String TEST_NAME = "XYZ Company";
 
-  public static String[][] INIT_DATA = new String[][] {
-      new String[] { TEST_NAME, "[LL_COMPANY]", "[LL_CUSTOMER]", "[LL_NEVER]",
-          "", "", "", "", "000-123-4567", "", "http://www.xyz.com/" } };
+  public static String[][] INIT_DATA = new String[][] { new String[] {
+      TEST_NAME, "[LL_COMPANY]", "[LL_CUSTOMER]", "[LL_NEVER]", "[LL_NONE_F]",
+      "", "", "", "", "000-123-4567", "", "http://www.xyz.com/" } };
 
-  public static String[][] UPDATE_DATA = new String[][] {
-      new String[] { TEST_NAME, "[LL_COMPANY]", "[LL_LEAD]", "[LL_NEVER]", "",
-          "", "", "", "000-123-4567", "", "http://www.xyz.com/" } };
+  public static String[][] UPDATE_DATA = new String[][] { new String[] {
+      TEST_NAME, "[LL_COMPANY]", "[LL_LEAD]", "[LL_NEVER]", "[LL_NONE_F]", "",
+      "", "", "", "000-123-4567", "", "http://www.xyz.com/" } };
 
   private static String[] EXISTING_DATA =
       new String[] { TEST_NAME, "[LL_CUSTOMER]", null, "", "", "000-123-4567",

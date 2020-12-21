@@ -19,7 +19,7 @@ public class MyPotentialClientsUser2 extends MyPotentialClientsEx {
 
   private static String[] UPDATE_DATA_ROW =
       new String[] { "Temp Company", "[LL_COMPANY]", "[LL_CUSTOMER]",
-          "[LL_NEVER]", "", "", "test@qq.com", "", "", "", "" };
+          "[LL_NEVER]", "[LL_NONE_F]", "", "", "test@qq.com", "", "", "", "" };
 
   @Override
   protected String[] getUpdateEntityRow() {

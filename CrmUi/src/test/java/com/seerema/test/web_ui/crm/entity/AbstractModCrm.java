@@ -27,8 +27,8 @@ public abstract class AbstractModCrm extends AbstractStatusEntity {
           "LL_PHONE", "LL_SKYPE_ID", "LL_WEB_SITE" };
 
   protected static String[] UPD_FORM_LABELS = new String[] { "LL_NAME", "LL_TYPE",
-      "LL_STATUS", "LL_LAST_CONTACTED", "LL_ADDRESS", "LL_EMAIL", "LL_FAX", 
-      "LL_PHONE", "LL_SKYPE_ID", "LL_WEB_SITE" };
+      "LL_STATUS", "LL_LAST_CONTACTED", "LL_CUST_TASKS", "LL_ADDRESS", 
+      "LL_EMAIL", "LL_FAX", "LL_PHONE", "LL_SKYPE_ID", "LL_WEB_SITE" };
   
   // @formatter:on
 

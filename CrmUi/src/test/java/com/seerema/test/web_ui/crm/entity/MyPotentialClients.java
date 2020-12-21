@@ -30,16 +30,16 @@ public class MyPotentialClients extends AbstractModCrm {
 
   private static String UPD_STATUS_ENTITY_NAME = AllMyCustomers.NAME;
 
-  public static String[][] INIT_DATA = new String[][] {
-      new String[] { "Temp", "[LL_COMPANY]", "[LL_LEAD]", "[LL_NEVER]", "", "",
-          "", "", "1-888-1234567", "", "http://www.example.com/" } };
+  public static String[][] INIT_DATA = new String[][] { new String[] { "Temp",
+      "[LL_COMPANY]", "[LL_LEAD]", "[LL_NEVER]", "[LL_NONE_F]", "", "", "", "",
+      "1-888-1234567", "", "http://www.example.com/" } };
 
   private static String[] NEW_DATA =
       new String[] { "Temp Company", null, "test@qq.com", "", "", "", "" };
 
   private static String[] NEW_DATA_ROW =
       new String[] { "Temp Company", "[LL_COMPANY]", "[LL_LEAD]", "[LL_NEVER]",
-          "", "", "test@qq.com", "", "", "", "" };
+          "[LL_NONE_F]", "", "", "test@qq.com", "", "", "", "" };
 
   private static String[] EXISTING_DATA = new String[] { "Temp Company",
       "[LL_LEAD]", null, "test@qq.com", "", "", "", "" };
@@ -49,8 +49,8 @@ public class MyPotentialClients extends AbstractModCrm {
           "123-456-7890", "", "http://www.qq.com/" };
 
   private static String[] UPDATE_DATA_ROW = new String[] { "ZZ Company",
-      "[LL_COMPANY]", "[LL_CUSTOMER]", "[LL_NEVER]", "", "", "test@qq.com", "",
-      "123-456-7890", "", "http://www.qq.com/" };
+      "[LL_COMPANY]", "[LL_CUSTOMER]", "[LL_NEVER]", "[LL_NONE_F]", "", "",
+      "test@qq.com", "", "123-456-7890", "", "http://www.qq.com/" };
 
   private static String[][] SLIDE_DATA =
       new String[][] { new String[] { "[LL_COMPANY]" } };

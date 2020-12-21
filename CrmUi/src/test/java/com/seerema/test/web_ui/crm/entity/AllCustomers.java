@@ -21,7 +21,7 @@ public class AllCustomers extends AbstractModCrm {
   // @formatter:off
   
   public static String[][] INIT_DATA = new String[][] { new String[] { "Temp",
-      "[LL_COMPANY]", "[LL_LEAD]", "[LL_NEVER]", "user1", "", "", "", "",
+      "[LL_COMPANY]", "[LL_LEAD]", "[LL_NEVER]", "[LL_NONE_F]", "user1", "", "", "", "",
       "1-888-1234567", "", "http://www.example.com/" } };
 //  Potential Client  Never user1               
   // @formatter:on
@@ -30,7 +30,7 @@ public class AllCustomers extends AbstractModCrm {
 
   private static String[] NEW_DATA_ROW =
       new String[] { "Temp Company", "[LL_COMPANY]", "[LL_LEAD]", "[LL_NEVER]",
-          "user1", "", "", "test@qq.com", "", "", "", "" };
+          "[LL_NONE_F]", "user1", "", "", "test@qq.com", "", "", "", "" };
 
   // Save as NEW_DATA_ROW but different user and LL_CUSTOMER
   private static String[] UPDATE_DATA = new String[] { "Temp Company",
@@ -42,16 +42,16 @@ public class AllCustomers extends AbstractModCrm {
 
   private static String[] UPD_LABELS = new String[UPD_FORM_LABELS.length + 1];
 
-  static {
-    // Insert user after last contacted
-    int idx = 4;
+  // Index of LL_USER field
+  private static int USER_FIELD_IDX = 5;
 
-    for (int i = 0; i < idx; i++)
+  static {
+    for (int i = 0; i < USER_FIELD_IDX; i++)
       UPD_LABELS[i] = UPD_FORM_LABELS[i];
 
-    UPD_LABELS[idx] = "LL_USER";
+    UPD_LABELS[USER_FIELD_IDX] = "LL_USER";
 
-    for (int i = idx + 1; i < UPD_FORM_LABELS.length + 1; i++)
+    for (int i = USER_FIELD_IDX + 1; i < UPD_FORM_LABELS.length + 1; i++)
       UPD_LABELS[i] = UPD_FORM_LABELS[i - 1];
   }
 

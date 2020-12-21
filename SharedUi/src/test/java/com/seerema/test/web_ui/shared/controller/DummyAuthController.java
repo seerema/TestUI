@@ -32,12 +32,16 @@ public class DummyAuthController {
     HttpSession session = req.getSession();
     session.setAttribute("userName", username);
 
+    addCookie(resp, "USER_ID", username);
     String roles = SharedWebUiTestConstants.TEST_USERS.get(username);
-    if (roles != null) {
-      Cookie cookie = new Cookie("ROLES", roles);
-      cookie.setMaxAge(Integer.MAX_VALUE);
-      // Inject role into response
-      resp.addCookie(cookie);
-    }
+    if (roles != null)
+      addCookie(resp, "ROLES", roles);
+  }
+
+  private void addCookie(HttpServletResponse resp, String name, String value) {
+    Cookie cookie = new Cookie(name, value);
+    cookie.setMaxAge(Integer.MAX_VALUE);
+    // Inject role into response
+    resp.addCookie(cookie);
   }
 }

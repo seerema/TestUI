@@ -371,6 +371,18 @@ public abstract class GenericUiTestWeb extends WebUiTestUtils {
     SharedWebUiTestConstants.LL_SET.get("de").put("LL_COMPANY",
       "Unternehmen");
     
+    // LL_NONE_F
+    SharedWebUiTestConstants.LL_SET.get("en").put("LL_NONE_F",
+      "None");
+    SharedWebUiTestConstants.LL_SET.get("fr").put("LL_NONE_F",
+      "Aucune");
+    SharedWebUiTestConstants.LL_SET.get("ru").put("LL_NONE_F",
+      "Никаких");
+    SharedWebUiTestConstants.LL_SET.get("es").put("LL_NONE_F",
+      "Ninguna");
+    SharedWebUiTestConstants.LL_SET.get("de").put("LL_NONE_F",
+      "Keiner");
+    
     /*
     //
     SharedWebUiTestConstants.LL_SET.get("en").put("",
